@@ -116,9 +116,29 @@ body {
     letter-spacing: 0.03em;
 }
 header {
-    max-width: 1600px;
+    /* max-width: 1600px; */
+    width: 100%;
     border-bottom: 1px solid var(--nav-line-color);
+/*---------- робить фіксовану лінійку навігації --------------*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
 }
+header:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-white-color);
+}
+.top-line {
+    position: relative;
+    z-index: 2;
+}
+/* ------------------------------------------ */
 .container {
     max-width: 1190px;
     margin: 0 auto; /* ? - центрує контейнер відносно body*/
@@ -237,6 +257,7 @@ header {
     background-color: var(--overlay-hero-color);
     text-align: center; /*?- центрує рядковий елемент (кнопку)*/
     min-height: 600px;
+    margin-top: 80px; /*відступ для фвксованої лінійки навігації*/
     margin-bottom: 94px;
     padding: 200px 0px;
     position: relative;
